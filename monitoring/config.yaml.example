@@ -1,0 +1,15 @@
+DISCORD_WEBHOOK_URL: "your discord webhook token"
+CHECK_INTERVAL: 15
+MONITORED:
+  - name: "Server-1"
+    type: "ping"
+    target: "192.168.1.1"
+  # - name: "web-server"
+  #   type: "http"
+  #   target: "http://192.168.1.10:80/health"
+  # - name: "api-server"
+  #   type: "tcp"
+  #   target: ["192.168.1.11", 8080]
+  # - name: "docker-svc"
+  #   type: "systemd"
+  #   target: "myservice.service"
