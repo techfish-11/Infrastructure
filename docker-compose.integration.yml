@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  suricata-forwarder:
+    build: ./suricata
+    env_file: ./suricata/.env
+    volumes:
+      - ./suricata/eve.json:/var/log/suricata/eve.json:ro
+    depends_on:
+      - suricata-dashboard
+  suricata-dashboard:
+    build: ./suricata-dash
+    env_file: ./suricata-dash/.env
+    ports:
+      - "9000:9000"
+    stdin_open: true
+    tty: true

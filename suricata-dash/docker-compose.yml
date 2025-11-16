@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  suricata-dashboard:
+    build: .
+    env_file: .env
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./data:/data
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
