@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  suricata-forwarder:
+    build: .
+    env_file: .env
+    volumes:
+      - ./eve.json:/var/log/suricata/eve.json:ro
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
